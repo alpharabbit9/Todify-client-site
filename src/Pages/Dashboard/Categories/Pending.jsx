@@ -3,7 +3,7 @@
 const Pending = () => {
     return (
         <div>
-            pinu pinu
+            
         </div>
     );
 };

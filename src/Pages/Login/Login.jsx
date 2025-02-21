@@ -20,7 +20,7 @@ const Login = () => {
                     email : result.user?.email,
                     name : result.user?.displayName
                 }
-                axios.post('http://localhost:5000/users',userInfo)
+                axios.post('https://todify-server-site.vercel.app/users',userInfo)
                 .then(res => {
                     console.log(res.data)
                 })

@@ -7,37 +7,40 @@ import TODO from "../Pages/Dashboard/Categories/TODO";
 import Pending from "../Pages/Dashboard/Categories/Pending";
 import Done from "../Pages/Dashboard/Categories/Done";
 import AddTask from "../Pages/Dashboard/Add Task/AddTask";
+import PrivateRoutes from "./PrivateRoute";
 
 
 const Router = createBrowserRouter(
     [
         {
-            path:'/',
-            element:<Root></Root>,
-            children:[
+            path: '/',
+            element: <Root></Root>,
+            children: [
                 {
-                    path:'/',
-                    element:<Login></Login>
+                    path: '/',
+                    element: <Login></Login>
                 },
                 {
-                    path:'home',
-                    element:<Home></Home>,
-                    children:[
+                    path: 'home',
+                    element: <PrivateRoutes>
+                        <Home></Home>
+                    </PrivateRoutes>,
+                    children: [
                         {
-                            path:'/home/todo',
-                            element:<TODO></TODO>
+                            path: '/home/todo',
+                            element: <TODO></TODO>
                         },
                         {
-                            path:'/home/pending',
-                            element:<Pending></Pending>
+                            path: '/home/pending',
+                            element: <Pending></Pending>
                         },
                         {
-                            path:'/home/done',
-                            element:<Done></Done>
+                            path: '/home/done',
+                            element: <Done></Done>
                         },
                         {
-                            path:'/home/addTask',
-                            element:<AddTask></AddTask>
+                            path: '/home/addTask',
+                            element: <AddTask></AddTask>
                         }
                     ]
                 }
